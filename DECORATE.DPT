@@ -1,0 +1,143 @@
+ACTOR Ghost : PlayerPawn
+{
+	Speed 1.4
+	Health 1
+	Radius 16
+	Height 32
+	Mass 100
+	Player.MaxHealth 1
+	BloodColor "Gray"
+	PainChance 0
+	Player.ViewHeight 15
+	Player.DisplayName "Ghost"
+	Player.SoundClass "Ghost"
+	Player.StartItem "Flighter"
+	Player.StartItem "IsGhost"
+	Player.StartItem "GhostSpook"
+	FloatSpeed 1
+	RenderStyle Translucent
+	Damagefactor "normal", 0
+	Damagefactor "Fire", 0
+	Damagefactor "Ice", 0
+	Player.WeaponSlot 1, GhostSpook
+	-DONTSPLASH
+	-NOINTERACTION
+	-PICKUP
+	-TELESTOMP
+	+CANNOTPUSH
+	-FRIENDLY
+	+NOTARGET
+	+NOSKIN
+	States
+	{
+	Spawn:
+		SPIR AB 1
+		Loop
+	See:
+		SPIR AB 2
+		Loop
+	Missile:
+		SPIR A 1
+		Goto Spawn
+	Death:
+		SPIR KLMN 12 A_Fall
+		"----" A -1
+		Stop
+	}
+}
+
+ACTOR Flighter : PowerUpGiver
+{
+	Inventory.MaxAmount 0
+	Powerup.Type "Flight"
+	Powerup.Duration 0x2fffffff
+	+INVENTORY.AUTOACTIVATE
+	States
+	{
+	Spawn:
+		TNT1 A -1 
+		Stop
+	}
+}
+
+Actor GhostSpook : Weapon
+{
+	+WEAPON.NOAUTOFIRE
+	Weapon.KickBack 0
+	States
+	{
+	Ready:
+		CLAW A 100 A_WEAPONREADY
+		CLAW A 0 A_TakeInventory("ClawCounter",1)
+		Loop
+	Deselect:
+		CLAW A 0 A_Lower
+		CLAW A 0 A_Lower
+		CLAW A 0 A_Lower
+		CLAW A 0 A_Lower
+		CLAW A 1 A_Lower
+		Loop
+	Select:
+		CLAW A 0 A_Raise
+		CLAW A 0 A_Raise
+		CLAW A 0 A_Raise
+		CLAW A 0 A_Raise
+		CLAW A 1 A_Raise
+		Loop
+	Fire: 
+		CLAW B 0 A_JumpIfInventory("ClawCounter",1,"Fire2")
+		CLAW B 1 A_GiveInventory("ClawCounter",1)
+		CLAW C 1
+		CLAW E 1 A_CustomPunch(6, 0, 0, "NullPuff")
+		CLAW F 1
+		CLAW E 1
+		CLAW D 100
+		Goto Ready
+	Fire2:
+		CLAW G 1 A_TakeInventory("ClawCounter",1)
+		CLAW H 1
+		CLAW I 1 A_CustomPunch(6, 0, 0, "NullPuff")
+		CLAW J 1 
+		CLAW K 1 
+		CLAW K 100
+		Goto Ready
+	AltFire:
+		TNT1 A 100
+		TNT1 A 1 A_FireCustomMissile("SpookBall")
+		TNT1 A 100
+		Goto Ready
+	}
+}
+
+actor ClawCounter : inventory
+{
+	Inventory.MaxAmount 1 
+}
+
+Actor NullPuff : BulletPuff
+{
+	RenderStyle None
+	DamageType "Spook"
+}
+
+Actor SpookBall : DoomImpBall
+{
+	Speed 29
+	Damage (0.5)
+	DamageType "Spook"
+	States
+	{
+	Spawn:
+		SPIR KL 12
+		Loop
+	Death:
+		SPIR MN 12 
+		Stop
+	}
+}
+
+Actor IsGhost : CustomInventory
+{
+Inventory.MaxAmount 1
+Inventory.Amount 1
+}

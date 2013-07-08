@@ -1,0 +1,16 @@
+ClearTeams
+
+Team "Human Team"
+{
+	PlayerColor "00 00 FF"
+	TextColor "Blue"
+	RailColor "Blue"
+	PlayerStartThingNumber 5080
+}
+
+Team "Ghost Team"
+{
+	TextColor "Grey"
+	RailColor "Grey"
+	PlayerStartThingNumber 5081
+}

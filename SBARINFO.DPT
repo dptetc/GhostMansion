@@ -1,0 +1,34 @@
+base Doom;
+height 0;
+
+statusbar Fullscreen, Fullscreenoffsets
+{
+	drawimage "BTLEFT", 2, -33;
+	drawimage "BTRDOOM", -135, -46;
+	drawnumber 3, HUDFONT_DOOM, untranslated, health, 45, -30;
+	drawnumber 3, HUDFONT_DOOM, untranslated, Armor, 104, -30;
+	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, -75, -30;
+	drawnumber 3, INDEXFONTY, untranslated, ammo Clip, -34, -28;
+	drawnumber 3, INDEXFONTY, untranslated, ammo Shell, -34, -22;
+	drawnumber 3, INDEXFONTY, untranslated, ammo RocketAmmo, -34, -16;
+	drawnumber 3, INDEXFONTY, untranslated, ammo Cell, -34, -10;
+	drawnumber 3, INDEXFONTY, untranslated, ammocapacity Clip, -8, -28;
+	drawnumber 3, INDEXFONTY, untranslated, ammocapacity Shell, -8, -22;
+	drawnumber 3, INDEXFONTY, untranslated, ammocapacity RocketAmmo, -8, -16;
+	drawnumber 3, INDEXFONTY, untranslated, ammocapacity Cell, -8, -10;
+	InInventory BlueCard, 1 {drawimage "STKEYS0", 122, -30;}
+	InInventory YellowCard, 1 {drawimage "STKEYS1", 122, -20;}
+	InInventory RedCard, 1 {drawimage "STKEYS2", 122, -10;}
+	InInventory BlueSkull, 1 {drawimage "STKEYS3", -129, -30;}
+	InInventory YellowSkull, 1 {drawimage "STKEYS4", -129, -20;}
+	InInventory RedSkull, 1 {drawimage "STKEYS5", -129, -10;}
+	drawswitchableimage weaponslot 0, "STGNUM0", "STYSNUM0", -68, -43;
+	drawswitchableimage weaponslot 1, "STGNUM1", "STYSNUM1", -61, -43;
+	drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", -54, -43; 
+	drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", -47, -43;
+	drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", -40, -43;
+	drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", -33, -43;
+	drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", -26, -43;
+	drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", -19, -43;
+	drawswitchableimage weaponslot 8, "STGNUM8", "STYSNUM8", -12, -43;
+}

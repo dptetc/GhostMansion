@@ -1,0 +1,18 @@
+$random pm_taunt { Ghost/taunt1 Ghost/taunt2 }
+
+Ghost/taunt1 MISTDETH
+Ghost/taunt2 MISTPAIN
+
+$playersound    Ghost male *pain100 MISTPAIN  
+$playersounddup Ghost male *pain75 *pain100
+$playersounddup Ghost male *pain50 *pain100
+$playersounddup Ghost male *pain25 *pain100
+$playersound    Ghost male *death Msnd3
+$playersound    Ghost male *xdeath Msnd3
+$playersound    Ghost male *usefail Msnd2
+$playersounddup Ghost male *grunt *pain100
+$playersounddup Ghost male *land *pain100
+$playersound    Ghost male *jump Msnd2
+$playeralias    Ghost male *taunt pm_taunt  
+
+Ghost/Fly MISTACTV

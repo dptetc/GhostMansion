@@ -1,0 +1,93 @@
+
+gameinfo
+{
+    titlepage = "SPOOKTTL"
+    //creditpage = ""
+    titlemusic = "MAINMENU"
+    titletime = 15
+    advisorytime = 0
+    pagetime = 15
+    chatsound = "misc/chat2"
+    finalemusic = "CTPAX"
+    finaleflat = "LAVA1"
+    //finalepage = "CREDIT"
+    //infopage = "", ""
+    quitsound = "weapons/shotgf"
+    borderflat = "FWATER1"
+    border = DoomBorder
+    telefogheight = 0
+    defkickback = 100
+    skyflatname = "F_SKY1"
+    defaultbloodcolor = "8F 00 00"
+    defaultbloodparticlecolor = "FF 00 00"
+    //backpacktype = "Backpack"
+    //armoricons = "ARM1A0", 0.5, "ARM2A0"
+    intermissionmusic = "MAIN_TTL"
+    intermissioncounter = true
+    dimcolor = "00 88 FF"
+    dimamount = 0.2
+    definventorymaxamount = 25
+    defaultrespawntime = 12
+    defaultdropstyle = 1
+    //endoom = "ENDOOM"
+    //player5start = 4001
+    pickupcolor = "00 00 00"
+    quitmessages = "You spooked?", "You cant play?"
+    menufontcolor_title = "BLACK"
+    menufontcolor_label = "BLACK"
+    menufontcolor_value = "BLACK"
+    menufontcolor_action = "BLACK"
+    menufontcolor_header = "BLACK"
+    menufontcolor_highlight = "BLACK"
+    menufontcolor_selection = "BLACK"
+    //menubackbutton = "M_BACK_D"
+    //pausesign = "M_PAUSE"
+    gibfactor = 1
+}
+
+clearepisodes
+
+episode MANSION
+{
+	name = "Graffiti Maps"
+	key = "G"
+}
+
+clearskills
+
+skill Novice
+{
+	textcolor = WHITE
+	Name = "Novice"
+}
+
+skill Apprentice
+{
+	textcolor = WHITE
+	Name = "Apprentice"
+}
+
+skill Adept
+{
+	textcolor = WHITE
+	Name = "Adept"
+}
+
+skill Expert
+{
+	textcolor = WHITE
+	Name = "Expert"
+}
+
+skill Master
+{
+	textcolor = WHITE
+	Name = "Master"
+}
+
+map MANSION "MANSION"
+{
+	next = "MANSION"
+	sky1 = "BLOODSKY"
+	music = "CTPAX"
+}
